@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_151154) do
     t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "correct", default: true
+    t.boolean "correct", default: false
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
