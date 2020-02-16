@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create(name: 'Oleg')
+category = Category.create(title: 'Ruby')
+test = Test.create(title: 'Ruby Basic level', level: 1, category_id: category.id, user_id: user.id)
+questions = Question.create(body: 'What kinds of variables exist in Ruby?', test_id: test.id)
+answer = Answer.create(body: 'instance variables, class variables, global variables', question_id: question.id)
