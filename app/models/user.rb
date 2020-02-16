@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :tests
+  has_and_belongs_to_many :tests
 
   def difficulty_tests(level)
     self.tests.where(level: level)
