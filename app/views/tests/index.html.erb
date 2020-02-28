@@ -1,0 +1,15 @@
+<table class="table table-bordered text-center">
+  <thead>
+    <tr>
+      <th scope="col">Номер</th>
+      <th scope="col">Тест</th>
+    </tr>
+  </thead>
+    <tbody>
+      <% @tests.each do |test| %>
+          <td><%= test.id %></td>
+          <td><%= test.title %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

@@ -3,5 +3,4 @@ class Question < ApplicationRecord
   has_many :answers
 
   validates :body, presence: true
-  validate :validate_quantity_answer
 end
