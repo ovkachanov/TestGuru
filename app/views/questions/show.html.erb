@@ -1,0 +1,4 @@
+<div class="text-center">
+  <h1><%= @question.body %></h1>
+  <%= link_to 'Удалить вопрос', question_path(@question),method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
