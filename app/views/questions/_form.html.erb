@@ -1,0 +1,12 @@
+<h1><%= question_header(@question) %></h1>
+
+<%= form_for [@test, @question], local: true do |f| %>
+  <%= render 'shared/errors', resource: @question %>
+
+  <p>
+    <%= f.label :body, 'Вопрос' %><br>
+    <%= f.text_field :body%>
+  </p>
+  <br>
+  <%= f.submit %>
+<% end %>

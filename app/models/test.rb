@@ -2,7 +2,7 @@ class Test < ApplicationRecord
   belongs_to :category
   has_many :questions
   has_and_belongs_to_many :users
-  belongs_to :author, class_name: 'User', foreign_key: :user_id
+  belongs_to :author, class_name: 'User', foreign_key: :user_id, optional: true
 
   scope :easy_test, -> { where(level: 0..1) }
   scope :middle_test, -> { where(level: 2..4) }
