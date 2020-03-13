@@ -1,8 +1,14 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
+
   has_many :test_passages
   has_many :tests, through: :test_passages
 
-  validates :name, :email, presence: true
+  validates :email, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  has_secure_password
 
   def difficulty_tests(level)
     self.tests.where(level: level)
