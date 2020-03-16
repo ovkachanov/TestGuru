@@ -1,0 +1,15 @@
+<div class="text-center">
+  <h1><%= @question.body %></h1>
+
+  <h2>Ответы</h2>
+
+  <%= link_to 'Новый ответ', new_admin_question_answer_path(@question) %>
+
+  <ol>
+    <%= render @question.answers %>
+  </ol>
+
+  <%= link_to 'Редактировать', edit_admin_question_path(@question) %> |
+  <%= link_to 'Назад', admin_test_path(@question) %> |
+  <%= link_to 'Удалить вопрос', admin_question_path(@question),method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
