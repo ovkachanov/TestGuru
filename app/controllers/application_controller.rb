@@ -1,23 +1,20 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?
+  protected
 
-  private
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+  end
 
-  def authenticate_user!
-    unless current_user
-      session[:request_url] = request.path
-      return redirect_to login_path, alert: 'Проверьте свой email и пароль!'
+  def after_sign_in_path_for(user)
+    flash[:notice] = "Привет, #{user.first_name} #{user.last_name}!"
+    if user.admin?
+      admin_tests_path
+    else
+      root_path
     end
-    cookies[:email] = current_user.email
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
   end
 end
