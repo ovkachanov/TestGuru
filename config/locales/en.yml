@@ -46,6 +46,18 @@ en:
       header: "Test %{title} completed"
     update:
       completed: "Test completed"
+    gist:
+      success: "Gist was succesfully created! %{gist_url}"
+      failure: 'An error occurred while saving gist'
+
+  gist:
+    index:
+      question: 'Question'
+      gist_url: 'Gist url'
+      user: 'User'
+
+  gist_question_service:
+    description: "A question about %{title} from TestGuru"
 
   admin:
     nav:
