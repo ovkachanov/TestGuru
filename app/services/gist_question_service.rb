@@ -12,7 +12,7 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def seccuss?
+  def success?
     self.client.last_response.status == 201
   end
 

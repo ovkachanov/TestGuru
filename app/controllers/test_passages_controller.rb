@@ -24,12 +24,12 @@ class TestPassagesController < ApplicationController
 
   def gist
     question = @test_passage.current_question
-    new_gist = GistQuestionService.new(question)
-    request = new_gist.call
-    gist_url = request[:html_url]
+    service = GistQuestionService.new(question)
+    request = service.call
 
-    if new_gist.seccuss?
-      gist = current_user.gists.create(question_id: question.id, url: gist_url )
+    if service.success?
+      gist_url = request[:html_url]
+      current_user.gists.create(question_id: question.id, url: gist_url )
       redirect_to @test_passage, notice: t('.success', gist_url: gist_url)
     else
       redirect_to @test_passage, notice: t('.failure')
