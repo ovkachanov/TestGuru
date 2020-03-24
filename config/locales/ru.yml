@@ -51,7 +51,7 @@ ru:
 
   admin:
     nav:
-      header: "Панель администратора TestGuru"
+      header: "Панель администратора"
       welcome: "Добро пожаловать"
       guru: "Гуру"
       logout: "Выход"

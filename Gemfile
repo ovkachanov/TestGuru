@@ -31,6 +31,9 @@ gem 'pry', '~> 0.12.2'
 gem 'devise', '~> 4.0'
 gem "letter_opener", :group => :development
 gem 'rails-i18n', '~> 5.1'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+gem 'mini_racer'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -1,13 +1,7 @@
-.flash {
-  border: 2px solid;
-  padding: 10px;
-  border-radius: 5px;
+.alert-notice {
+    background-color: #32CD32;
 }
 
-.flash.alert {
-  border-color: #ef2727;
-}
-
-.flash.notice {
-    border-color: green;
+.alert-alert {
+    background-color: #FF4500;
 }

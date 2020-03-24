@@ -1,8 +1,8 @@
 <h2><%= t('.header') %></h2>
 
-<%= link_to t('.new_test'), new_admin_test_path %>
+<%= link_to t('.new_test'), new_admin_test_path, class: 'badge badge-success' %>
 
-<table>
+<table class="table table-striped table-dark">
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
