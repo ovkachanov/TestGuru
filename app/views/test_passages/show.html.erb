@@ -1,5 +1,8 @@
 <h1>Тест по теме: <%= @test_passage.test.title %></h1>
 <h1>Вопрос №: <%= @test_passage.current_question.id %> из <%= @test_passage.test.questions.count %></h1>
+<div class="progress">
+  <div class="success", data-progress="<%= @test_passage.progress %>"></div>
+</div>
 
 <h2><%= @test_passage.current_question.body %></h2>
 
@@ -12,5 +15,5 @@
   <% end %>
 
   <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
-  <p><%= form.submit 'Следующий вопрос' %></p>
+  <p><%= form.submit 'Следующий вопрос', class: 'next' %></p>
 <% end %>

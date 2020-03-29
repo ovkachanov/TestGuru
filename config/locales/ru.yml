@@ -98,6 +98,8 @@ ru:
         choice: "Вы уверены?"
         edit: "Редактировать"
         delete: "Удалить"
+      form_inline:
+        submit: 'Ok'
 
 
   tests_mailer:

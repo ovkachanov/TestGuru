@@ -14,6 +14,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def progress
+    (self.current_question.id - 1) * 100 / questions_count
+  end
+
   def success_rate
     (correct_questions / test.questions.count) * 100
   end
@@ -38,6 +42,10 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = next_question
+  end
+
+  def questions_count
+    self.test.questions.count
   end
 
   def next_question
