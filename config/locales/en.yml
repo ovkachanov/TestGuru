@@ -117,6 +117,7 @@ en:
         choice: "Are you sure?"
         edit: "Edit"
         delete: "Delete"
+        show: "Show"
       form_inline:
         submit: 'Ok'
 

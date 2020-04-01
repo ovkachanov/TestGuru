@@ -99,9 +99,10 @@ ru:
         title: "Название теста: %{title}"
         level: "Уровень: %{level}"
         questions: "Вопросы:"
-        new_question: "Новый вопрос"
+        new_test: "Новый вопрос"
         edit: "Редактировать"
         back: "Назад"
+        actions: "Действия"
       new:
         create: "Создать новый тест"
         back: "Назад"
@@ -118,6 +119,7 @@ ru:
         choice: "Вы уверены?"
         edit: "Редактировать"
         delete: "Удалить"
+        show: "Просмотр"
       form_inline:
         submit: 'Ok'
 
