@@ -10,6 +10,6 @@
   </ol>
 
   <%= link_to 'Редактировать', edit_admin_question_path(@question) %> |
-  <%= link_to 'Назад', admin_test_path(@question) %> |
+  <%= link_to 'Назад', admin_test_path(@question.test.id) %> |
   <%= link_to 'Удалить вопрос', admin_question_path(@question),method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>

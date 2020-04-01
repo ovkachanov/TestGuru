@@ -18,6 +18,10 @@ class TestPassage < ApplicationRecord
     (self.current_question.id - 1) * 100 / questions_count
   end
 
+  def question_number
+    test.questions.index(current_question) + 1
+  end
+
   def success_rate
     (correct_questions / test.questions.count.to_f) * 100
   end

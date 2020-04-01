@@ -1,19 +1,24 @@
-<h1>Тест по теме: <%= @test_passage.test.title %></h1>
-<h1>Вопрос №: <%= @test_passage.current_question.id %> из <%= @test_passage.test.questions.count %></h1>
-<div class="progress">
-  <div class="success", data-progress="<%= @test_passage.progress %>"></div>
-</div>
+<% if @test_passage.test.questions.count.zero? %>
+  <h1>У теста нет вопросов</h1>
+  <%= link_to 'Новый вопрос', new_admin_test_question_path(@test_passage.test.id) if current_user.admin? %>
+<% else %>
+  <h1>Тест по теме: <%= @test_passage.test.title %></h1>
+  <h1>Вопрос №: <%= @test_passage.question_number %> из <%= @test_passage.test.questions.count %></h1>
+  <div class="progress">
+    <div class="success", data-progress="<%= @test_passage.progress %>"></div>
+  </div>
 
-<h2><%= @test_passage.current_question.body %></h2>
+  <h2><%= @test_passage.current_question.body %></h2>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
+  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+      <p>
+        <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+        <%= b.label %>
+      </p>
+    <% end %>
+
+    <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
+    <p><%= form.submit 'Следующий вопрос', class: 'next' %></p>
   <% end %>
-
-  <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
-  <p><%= form.submit 'Следующий вопрос', class: 'next' %></p>
 <% end %>
