@@ -2,6 +2,7 @@
    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
 
   <span class="navbar-text">
+    <%= link_to t('.feedback'), new_contact_path %> |
     <% if user_signed_in? %>
       <%= t('.welcome', user: current_user.first_name) %>|
       <%= link_to t('.admin_panel'), admin_tests_path if current_user.admin? %> |

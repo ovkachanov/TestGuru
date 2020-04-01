@@ -37,6 +37,7 @@ gem 'mini_racer'
 gem 'faraday'
 gem "octokit", "~> 4.0"
 gem 'octicons_helper'
+gem 'mail_form'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -1,6 +1,15 @@
 ru:
   hello: "Привет мир"
 
+  mail_form:
+    models:
+      contact: "Your site contact form"
+    attributes:
+      contact:
+        email: "Ваш e-mail"
+        name: "Ваше Имя"
+        message: "Текст обращения"
+
   helpers:
     submit:
       test:
@@ -18,12 +27,14 @@ ru:
 
   layouts:
     application:
-      welcome: "Добро пожаловать %{user_name} Гуру"
+
+  shared:
+    nav:
+      welcome: "Добро пожаловать %{user} Гуру"
       log_out: "Выход"
       sign_up: "Регистрация"
       log_in: "Вход"
-
-  shared:
+      feedback: "Форма для связи"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -42,6 +53,15 @@ ru:
       begin: "Начался тест '%{title}'"
     test:
       start: "Начать"
+
+  contacts:
+    form:
+      submit: 'Отправить'
+    new:
+      header: 'Привет! Здесь вы можете отправить сообщение в форме обратной связи'
+    create:
+      thank: 'Спасибо за ваше сообщение!'
+      soon: 'Мы обязательно свяжемся с Вами позже'
 
   test_passages:
     result:
