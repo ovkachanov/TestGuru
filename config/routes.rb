@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root 'tests#index'
+  resources :contacts, only: [:new, :create]
 
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do

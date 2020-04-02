@@ -1,6 +1,16 @@
 en:
   hello: "Hello world"
 
+  mail_form:
+    models:
+      contact: "Your site contact form"
+    attributes:
+      contact:
+        email: "E-mail"
+        name: "Your name"
+        message: "Sent message"
+
+
   helpers:
     submit:
       test:
@@ -18,12 +28,14 @@ en:
 
   layouts:
     application:
-      welcome: "Welcome %{user_name} Guru"
-      log_out: "Logout"
-      sign_up: "Sign_up"
-      log_in: "login"
 
   shared:
+    nav:
+      welcome: "Welcome %{user} Guru"
+      log_out: "Log Out"
+      sign_up: "Sign Up"
+      log_in: "login"
+      feedback: "Feedback"
     errors:
       header:
         one: "%{count} error detected"
@@ -40,6 +52,15 @@ en:
       begin: "Test begun '%{title}'"
     test:
       start: "Start"
+
+  contacts:
+    form:
+      submit: 'Send message'
+    new:
+      header: 'Hello! Here you can send a message.'
+    create:
+      thank: 'Thank you for your message!'
+      soon: 'We will contact you later'
 
   test_passages:
     result:
@@ -96,6 +117,7 @@ en:
         choice: "Are you sure?"
         edit: "Edit"
         delete: "Delete"
+        show: "Show"
       form_inline:
         submit: 'Ok'
 
