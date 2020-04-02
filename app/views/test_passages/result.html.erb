@@ -1,8 +1,8 @@
 <h1>Привильных ответов: <%= @test_passage.correct_questions %> из <%= @test_passage.test.questions.count %></h1>
 <% if @test_passage.success? %>
   <h2>Тест сдан успешно! <h2>
-  <h2 class='success'>Процент правильных ответов - <%= @test_passage.success_rate %> %</h2>
+  <h2 class='success-rate'>Процент правильных ответов - <%= @test_passage.success_rate.to_i %> %</h2>
 <% else %>
   <h1>Тест не сдан! Попробуйте еще.</h2>
-  <h2 class='unsuccess'>Процент успешных ответов - <%= @test_passage.success_rate %> %</h1>
+  <h2 class='unsuccess-rate'>Процент успешных ответов - <%= @test_passage.success_rate.to_i %> %</h2>
 <% end %>
