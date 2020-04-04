@@ -21,6 +21,10 @@ class User < ApplicationRecord
     self.tests.where(level: level)
   end
 
+  def successful_tests_uniq_ids
+    self.test_passages.select(&:successfully?).map(&:test_id).uniq
+  end
+
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end

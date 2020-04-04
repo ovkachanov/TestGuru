@@ -26,6 +26,10 @@ class TestPassage < ApplicationRecord
     (correct_questions / test.questions.count.to_f) * 100
   end
 
+  def successfully?
+    completed? && success?
+  end
+
   def success?
     success_rate >= THRESHOLD_SUCCESS
   end

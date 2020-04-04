@@ -2,5 +2,14 @@
   <td><%= test.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.size %></td>
+  <% if current_user.test_passage(test) %>
+    <% if current_user.test_passage(test).successfully? %>
+      <td class='align-middle'>&#10003;</td>
+    <% else %>
+      <td class='align-middle'>&#10060;</td>
+    <% end %>
+  <% else %>
+    <td class='align-middle'>Не проходился</td>
+  <% end %>
   <td><%= button_to t('.start'), start_test_path(test) %></td>
 </tr>
