@@ -5,6 +5,7 @@
     <%= link_to t('.feedback'), new_contact_path %> |
     <% if user_signed_in? %>
       <%= link_to 'Мои бэйджи', badges_path %> |
+      <%= link_to 'Все бэйджи', badges_all_badges_path %> |
       <%= t('.welcome', user: current_user.first_name) %>|
       <%= link_to t('.admin_panel'), admin_tests_path if current_user.admin? %> |
       <%= link_to t('.log_out'), destroy_user_session_path, data: { method: :delete } %>

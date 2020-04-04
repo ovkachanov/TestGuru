@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   get 'session/new'
   get 'users/new'
+  get 'badges/all_badges'
 
   root 'tests#index'
   resources :contacts, only: [:new, :create]
-  resources :badges, only: :index
+  resources :badges, only: :index 
 
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
