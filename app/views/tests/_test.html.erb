@@ -3,7 +3,7 @@
   <td><%= test.level %></td>
   <td><%= test.questions.size %></td>
   <% if current_user.test_passage(test) %>
-    <% if current_user.test_passage(test).successfully? %>
+    <% if current_user.test_passage(test).successfully_completed %>
       <td class='align-middle'>&#10003;</td>
     <% else %>
       <td class='align-middle'>&#10060;</td>

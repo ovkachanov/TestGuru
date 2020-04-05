@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def successful_tests_uniq_ids
-    self.test_passages.select(&:successfully?).map(&:test_id).uniq
+    self.test_passages.successfully_completed.map(&:test_id).uniq
   end
 
   def test_passage(test)

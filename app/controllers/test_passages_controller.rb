@@ -15,7 +15,10 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      BadgeIssuance.new(@test_passage).distributor
+      if @test_passage.success?
+        @test_passage.update_attributes(successfully_completed: true)
+        BadgeIssuance.new(@test_passage).distributor
+      end
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage), notice: t('.completed')
     else

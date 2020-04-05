@@ -7,15 +7,8 @@ class BadgeIssuance
   end
 
   def distributor
-    Badge.all.each do |badge|
-      case badge.rule
-      when 'test_first_try'
-        add_badge(badge) if passed_first_time?
-      when 'all_tests_category'
-        add_badge(badge) if passed_all_tests_with_category?(badge.parameter)
-      when 'all_tests_level'
-        add_badge(badge) if passed_all_tests_with_level?(badge.parameter.to_i)
-      end
+    Badge.all.find_each do |badge|
+      add_badge(badge) if self.send("passed_#{badge.rule}?", badge.parameter)
     end
   end
 
@@ -25,16 +18,16 @@ class BadgeIssuance
 
   private
 
-  def passed_first_time?
-    @test_passage.successfully? && @user.tests.where(id: @test.id).count == 1
+  def passed_test_first_try?(params)
+    @test_passage.successfully_completed && @user.tests.where(id: @test.id).count == 1
   end
 
-  def passed_all_tests_with_level?(level)
+  def passed_all_tests_level?(level)
     tests_by_level_ids = Test.where(level: level).ids
     (tests_by_level_ids - @user.successful_tests_uniq_ids).empty?
   end
 
-  def passed_all_tests_with_category?(category_title)
+  def passed_all_tests_category?(category_title)
     category_tests_ids = Category.find_by(title: category_title).tests.ids
     (category_tests_ids - @user.successful_tests_uniq_ids).empty?
   end
