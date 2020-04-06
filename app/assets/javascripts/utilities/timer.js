@@ -12,7 +12,7 @@ document.addEventListener('turbolinks:load', function() {
         timerTime -= 1;
       } else {
         alert('Time out!');
-        window.location.replace('/test_passage/' + userTestId + '/result');
+        window.location.replace('/test_passages/' + userTestId + '/result');
       }
 
       var time = parseInt(timerTime / 60) + ":" + (timerTime % 60);
