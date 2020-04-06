@@ -7,6 +7,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: [:create, :update]
 
+  scope :successfully_completed, -> { where(successfully_completed: true) }
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -24,6 +26,10 @@ class TestPassage < ApplicationRecord
 
   def success_rate
     (correct_questions / test.questions.count.to_f) * 100
+  end
+
+  def successfully?
+    completed? && success?
   end
 
   def success?

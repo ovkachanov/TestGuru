@@ -47,6 +47,7 @@ en:
       title: "Title"
       level: "Level"
       questions: "Questions"
+      status: "Status comleted"
       actions: "Actions"
     start:
       begin: "Test begun '%{title}'"

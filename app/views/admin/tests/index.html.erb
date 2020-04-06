@@ -1,6 +1,8 @@
 <h2><%= t('.header') %></h2>
 
 <%= link_to t('.new_test'), new_admin_test_path, class: 'badge badge-success' %>
+<%= link_to t('.new_badge'), new_admin_badge_path, class: 'badge badge-primary' %>
+<%= link_to t('.new_category'), new_admin_category_path, class: 'badge badge-warning' %>
 
 <%= render 'shared/errors', resource: @test %>
 
@@ -13,6 +15,9 @@
     </th>
     <th><%= t('.level') %></th>
     <th><%= t('.questions') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.test_id') %></th>
+    <th><%= t('.completed') %></th>
     <th colspan="3"><%= t('.actions') %></th>
   </tr>
 

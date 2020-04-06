@@ -143,11 +143,7 @@ GEM
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     orm_adapter (0.5.0)
-<<<<<<< HEAD
-    pg (0.21.0)
-=======
     pg (0.18.4)
->>>>>>> fb0d33f93ff9ae5f7f01299b356fd830026011ee
     popper_js (1.16.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -273,11 +269,7 @@ DEPENDENCIES
   mini_racer
   octicons_helper
   octokit (~> 4.0)
-<<<<<<< HEAD
-  pg (~> 0.18)
-=======
   pg (~> 0.18.4)
->>>>>>> fb0d33f93ff9ae5f7f01299b356fd830026011ee
   pry (~> 0.12.2)
   puma (~> 3.12)
   rails (~> 5.2.3)

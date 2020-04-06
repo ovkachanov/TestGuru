@@ -48,6 +48,7 @@ ru:
       title: "Название"
       level: "Уровень"
       questions: "Вопросы"
+      status: "Статус прохождения"
       actions: "Действия"
     start:
       begin: "Начался тест '%{title}'"
@@ -91,9 +92,13 @@ ru:
       index:
         header: "Доступные тесты"
         new_test: "Новый тест"
+        new_badge: "Новый бэйдж"
+        new_category: "Новая категория"
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
+        category: "Категория"
+        test_id: "Тест ID"
         actions: "Действия"
       show:
         title: "Название теста: %{title}"

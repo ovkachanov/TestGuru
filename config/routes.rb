@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   get 'session/new'
   get 'users/new'
+  get 'badges/all_badges'
 
   root 'tests#index'
   resources :contacts, only: [:new, :create]
+  resources :badges, only: :index 
 
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
+    resources :categories, only: [:new, :create]
     resources :tests do
       patch :update_inline, on: :member
 
