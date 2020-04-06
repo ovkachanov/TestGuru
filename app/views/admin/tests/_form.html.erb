@@ -12,6 +12,11 @@
  </p>
 
  <p>
+  <%= form.label :timer %><br>
+  <%= form.number_field :timer, in: 300.0..1800.0, step: 5 %>
+</p>
+
+ <p>
    <%= form.label :category_id %>:
    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
  </p>

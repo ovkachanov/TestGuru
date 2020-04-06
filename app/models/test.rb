@@ -16,4 +16,8 @@ class Test < ApplicationRecord
   def self.by_title(title)
     sorting_tests_by_category(title).order(title: :desc).pluck(:title)
   end
+
+  def have_timer?
+    timer.positive?
+  end
 end
