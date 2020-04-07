@@ -40,6 +40,19 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+
+  def active_time
+    self.created_at + self.test.timer.seconds
+  end
+
+  def timeout?
+    Time.current > active_time
+  end
+
+  def time_left
+    (active_time - Time.current).to_i
+  end
+
   private
 
   def correct_answer?(answer_ids)

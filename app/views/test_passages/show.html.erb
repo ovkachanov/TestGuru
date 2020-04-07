@@ -1,3 +1,7 @@
+<% if @test_passage.test.have_timer? %>
+  <h3>На прохождение теста осталось: <%= content_tag :test_timer,'0:00', class: 'timer', data: { time: @test_passage.time_left, id: @test_passage.id } %></h3>
+<% end %>
+
 <% if @test_passage.test.questions.count.zero? %>
   <h1>У теста нет вопросов</h1>
   <%= link_to 'Новый вопрос', new_admin_test_question_path(@test_passage.test.id) if current_user.admin? %>

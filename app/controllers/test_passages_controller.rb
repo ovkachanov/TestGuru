@@ -14,7 +14,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.completed? || @test_passage.timeout?
       if @test_passage.success?
         @test_passage.update_attributes(successfully_completed: true)
         BadgeIssuance.new(@test_passage).distributor
